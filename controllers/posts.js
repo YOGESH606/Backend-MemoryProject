@@ -13,6 +13,7 @@ const getPosts = async (req, res) => {
 const createPost = async (req, res) => {
     const post = req.body;
     const newPost = new postMessage(post);
+    console.log(newPost.createAt);
     try {
         newPost.save(newPost);
         res.status(201).json(newPost);
